@@ -1,4 +1,4 @@
-import pokemon from '../data.js';
+import pokemon from './data.js';
 
 function getRandomIndex() {
     return Math.floor(Math.random() * pokemon.length);

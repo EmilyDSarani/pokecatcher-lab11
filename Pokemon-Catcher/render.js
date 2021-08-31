@@ -1,13 +1,17 @@
+//import { getRandomPokemon } from "../main-data/poke-randomizer-utils.js";
 
 export function render(pokemans){
-    const li = document.createElement('li');
+    const label = document.createElement('label');
     const h3 = document.createElement('h3');
     const h4 = document.createElement('h4');
     const img = document.createElement('img');
+    const radioInput = document.createElement('input');
+
+    radioInput.setAttribute('type', 'radio');
+    radioInput.setAttribute('name', pokemans);
 
 
-
-    li.classList.add('pokemon');
+    label.classList.add('pokemon');
     h3.classList.add('pokemon-pokemon');
     h4.classList.add('pokemon-type_1');
     img.classList.add('pokemon-url_image');
@@ -17,10 +21,11 @@ export function render(pokemans){
     img.src = pokemans.url_image;
 
 
-    li.append(
+    label.append(
         h3,
         h4,
         img,
+        radioInput
     );
-    return li; 
+    return label; 
 }

@@ -1,9 +1,9 @@
 import pokemon from '../main-data/data.js';
 import { render } from './render.js';
 
-const ul = document.getElementById('pokemon');
+const body = document.getElementById('pokemon');
 
 for (let poke of pokemon){
-    const li = render(poke);
-    ul.append(li);
+    const label = render(poke);
+    body.append(label);
 }

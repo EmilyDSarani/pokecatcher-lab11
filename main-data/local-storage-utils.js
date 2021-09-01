@@ -1,34 +1,39 @@
 import { findById } from './utils.js';
 
 //please note that local storage only knows strings. That is why we have to go through this procress to turn an array into a string the back. 
-const POKEMON = 'POKEMON';
+const POKEDEX = 'POKEDEX';
 
 
-export function capturePokemon(){
-    const stringyPoke = localStorage.capturePokemon(POKEMON);
-    if (!stringyPoke){
+export function getPokedex(){
+    const stringyPokedex = localStorage.getPokedex(POKEDEX);
+    if (!stringyPokedex){
         return [];
     } 
-    const finalPoke = JSON.parse(stringyPoke);
-    return finalPoke;
+    const finalPokedex = JSON.parse(stringyPokedex);
+    return finalPokedex;
 }
 
 
 
-export function setPokedex(cartArray){
-    const stringyPoke = JSON.stringify(cartArray);
-    localStorage.setItem(POKEMON, stringyPoke);
+export function setPokedex(pokedex){
+    const stringyDex = JSON.stringify(pokedex);
+    localStorage.setItem(POKEDEX, stringyDex);
 
 }
 
 export function encounterPoke(someId){
-    const currentPoke = capturePokemon();
-    const pokedex = findById(currentPoke, someId);
-    if (pokedex){
-        const newPoke = { id: someId, quantity: 1 };
-        pokedex.push(newPoke);
-    
-    }
-    setPokedex(currentPoke);
+    const pokedex = getPokedex();
+    const seenPokemon = findById(pokedex, someId);
+    if (seenPokemon){
+        seenPokemon.encountered++;
+    } else { 
+        pokedex.push({
+            someId,
+            encountered: 1,
+            captured: 0,
+        });
+    }     
+    setPokedex(pokedex);
+
 }
 

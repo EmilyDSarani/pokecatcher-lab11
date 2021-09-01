@@ -5,7 +5,7 @@ const POKEDEX = 'POKEDEX';
 
 
 export function getPokedex(){
-    const stringyPokedex = localStorage.getPokedex(POKEDEX);
+    const stringyPokedex = localStorage.getItem(POKEDEX);
     if (!stringyPokedex){
         return [];
     } 
@@ -21,14 +21,17 @@ export function setPokedex(pokedex){
 
 }
 
-export function encounterPoke(someId){
+export function encounterPoke(id){
     const pokedex = getPokedex();
-    const seenPokemon = findById(pokedex, someId);
+    const seenPokemon = findById(pokedex, id);
     if (seenPokemon){
-        seenPokemon.encountered++;
+        pokedex.forEach(item => {
+            if (seenPokemon.id === item.id) item.encountered++;
+        });
+
     } else { 
         pokedex.push({
-            someId,
+            id,
             encountered: 1,
             captured: 0,
         });
@@ -37,3 +40,13 @@ export function encounterPoke(someId){
 
 }
 
+export function catchPoke(id){
+    console.log(id);
+    const pokedex = getPokedex();
+    const caughtPokemon = findById(pokedex, id);
+    pokedex.forEach(item => {
+        if (caughtPokemon.id === item.id) item.captured++;
+    });
+    setPokedex(pokedex);
+
+}

@@ -1,38 +1,39 @@
 import { getRandomPokemon } from '../main-data/poke-randomizer-utils.js';
+import { encounterPoke } from '../main-data/local-storage-utils.js';
 
-export function render(pokemans){
+export function render(pokemon){
     const container = document.createElement ('div');
     const pokecatch = document.getElementById ('poke-catch');
     const label = document.createElement('label');
-    const h = document.createElement('h');
-    const p = document.createElement('p');
     const img = document.createElement('img');
     const radioInput = document.createElement('input');
-    //const button = document.querySelector('#catch');
+    const buttonEl = document.querySelector('#catchpoke');
     
-
-    radioInput.setAttribute('type', 'radio');
-    radioInput.setAttribute('name', 'pokemans');
-    label.classList.add('pokemon');
-    h.classList.add('pokemon-pokemon');
-    p.classList.add('pokemon-type_1');
     img.classList.add('pokemon-url_image');
+    radioInput.setAttribute('type', 'radio');
+    radioInput.setAttribute('name', 'pokemon');
+
+    
+    
+    img.src = pokemon.url_image;
+    label.classList.add('pokemon');
+    
+  
     container.classList.add('poke-catch');
 
-    h.textContent = pokemans.pokemon;
-    p.textContent = pokemans.type_1;
-    img.src = pokemans.url_image;
     
     container.append(
         label,
-        h,
-        p,
         img,
         radioInput
     );
     pokecatch.append(
-        container
+        container,
     );
 
-
+    buttonEl.addEventListener('click', () => {
+        //getRandomPokemon();
+        //encounterPoke(pokemon.id);
+        alert('Go pokeball!');
+    });
 }

@@ -1,6 +1,15 @@
 
+@media(min-width: 768px) {
+    footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+    }
+  }
+
 div{
-    display: flex;
+    display: grid;
     justify-content: center;
     flex-direction: row;
 }
@@ -24,17 +33,4 @@ button:hover {
     cursor: pointer;
 }
 
-input:checked + img {
-    border: solid 10px rgb(79, 128, 235);
-    border-radius: 15px;
-}
 
-input:checked + img {
-    border: solid 10px rgb(79, 128, 235);
-    border-radius: 15px;
-}
-
-input:checked + img {
-    border: solid 10px rgb(79, 128, 235);
-    border-radius: 15px;
-}

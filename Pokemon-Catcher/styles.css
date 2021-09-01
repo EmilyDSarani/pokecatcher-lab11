@@ -16,7 +16,17 @@ div{
 img{
     width: 200px;
     height: auto;
+    padding: 20px;
+    margin: 30px;
+    
+
 }
+input:checked{
+cursor:pointer;
+}
+
+
+
 button {
 	border: 1px solid rgb(2, 0, 0);
 	background-color: rgb(172, 0, 0);
@@ -31,6 +41,12 @@ button:hover {
 	border-color: 1px solid rgb(0, 0, 0);
 	color: rgb(175, 10, 10);
     cursor: pointer;
+}
+
+.center{
+border-radius: 20%;
+border: dotted rgb(255, 160, 160);
+background-color: rgb(250, 152, 152);
 }
 
 

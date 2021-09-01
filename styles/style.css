@@ -5,7 +5,7 @@ body {
     --color2: hsla(207, 67%, 44%, 1);
     --color3: hsla(200, 61%, 56%, 1);
     --color4: hsla(187, 41%, 94%, 1);
-    --color5: hsla(170, 28%, 95%, 1); */
+    --color5: rgb(255, 255, 255); */
 
     /* --color1: hsla(45, 86%, 83%, 1);
     --color2: hsla(135, 65%, 98%, 1);
@@ -72,6 +72,7 @@ h2 {
 
 .main-logo {
     animation: pulse 5s infinite ease-in-out;
+    border-radius: 50%;
 }
 
 header img {
@@ -119,4 +120,8 @@ footer {
       left: 0;
       right: 0;
     }
+  }
+  .grass{
+      width: 100%;
+      height: auto;
   }

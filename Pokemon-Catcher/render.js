@@ -5,11 +5,11 @@ export function render(pokemon){
     const pokecatch = document.getElementById ('poke-catch');
     const label = document.createElement('label');
     const img = document.createElement('img');
-    const radioInput = document.createElement('input');
+    const input = document.createElement('input');
     
-    radioInput.setAttribute('type', 'radio');
-    radioInput.setAttribute('name', 'pokemon');
-    radioInput.setAttribute('value', pokemon.id);
+    input.setAttribute('type', 'radio');
+    input.setAttribute('name', 'pokemon');
+    input.setAttribute('value', pokemon.id);
     
     label.classList.add('pokemon');
     container.classList.add('poke-catch');
@@ -20,7 +20,7 @@ export function render(pokemon){
     container.append(
         label,
         img,
-        radioInput
+        input
     );
     
     pokecatch.append(

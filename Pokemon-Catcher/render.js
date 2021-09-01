@@ -8,7 +8,7 @@ export function render(pokemans){
     const p = document.createElement('p');
     const img = document.createElement('img');
     const radioInput = document.createElement('input');
-    //const button = document.querySelector('#catch');
+    const button = document.querySelector('#catch');
     
 
     radioInput.setAttribute('type', 'radio');
@@ -33,6 +33,11 @@ export function render(pokemans){
     pokecatch.append(
         container
     );
-
+    
+    button.addEventListener('click', () => {
+        getRandomPokemon();
+        radioInput.querySelector('input:checked');
+        
+    });
 
 }

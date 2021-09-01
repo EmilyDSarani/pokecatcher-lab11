@@ -41,7 +41,6 @@ export function encounterPoke(id){
 }
 
 export function catchPoke(id){
-    console.log(id);
     const pokedex = getPokedex();
     const caughtPokemon = findById(pokedex, id);
     pokedex.forEach(item => {

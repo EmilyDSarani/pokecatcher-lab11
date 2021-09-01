@@ -1,4 +1,3 @@
-import { getRandomPokemon } from '../main-data/poke-randomizer-utils.js';
 import { encounterPoke } from '../main-data/local-storage-utils.js';
 
 export function render(pokemon){

@@ -1,6 +1,6 @@
 import { render } from './render.js';
 import { getRandomPokemon } from '../main-data/poke-randomizer-utils.js';
-import { encounterPoke, catchPoke } from '../main-data/local-storage-utils.js';
+import { catchPoke } from '../main-data/local-storage-utils.js';
 
 const pokemon = getRandomPokemon();
 

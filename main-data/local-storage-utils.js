@@ -25,7 +25,8 @@ export function setPokedex(pokedex){
 export function encounterPoke(id){
     const pokedex = getPokedex();
     const seenPokemon = findById(pokedex, id);
-    if (seenPokemon){
+    const fullPokemon = findById(pokenames, id);
+    if (seenPokemon){ 
         // pokedex.forEach(item => {
         //     if (seenPokemon.id === item.id) item.encountered++;
         // });
@@ -35,7 +36,7 @@ export function encounterPoke(id){
             id,
             encountered: 1,
             captured: 0,
-            names: pokenames.pokemon
+            name: fullPokemon.pokemon
         });
     }     
     setPokedex(pokedex);

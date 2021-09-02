@@ -1,16 +1,21 @@
 
 import { getPokedex } from '../main-data/local-storage-utils.js';
 
+
 const ctx = document.getElementById('myChart');
 
 const pokedex = getPokedex();
 
-const arrayOfCaptures = pokedex.map(({ captured }) => captured);
+let arrayOfCaptures = pokedex.map(({ captured }) => captured);
 
-const arrayOfEncounters = pokedex.map(({ encountered }) => encountered);
+let arrayOfEncounters = pokedex.map(({ encountered }) => encountered);
 
-const arrayOfNames = pokedex.map(({ item }) => item);
+let arrayOfNames = pokedex.map(({ name }) => name);
 
+console.log(pokedex);
+console.log(arrayOfNames);
+console.log(arrayOfEncounters);
+console.log(arrayOfCaptures);
 
 const myChart = new Chart(ctx, { // eslint-disable-line
     type: 'bar',
@@ -32,8 +37,6 @@ const myChart = new Chart(ctx, { // eslint-disable-line
                 data: arrayOfCaptures,
                 backgroundColor: [
                     'blue',
-                    'yellow',
-                    'pink',
                     
                 ],
 

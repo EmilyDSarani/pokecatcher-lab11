@@ -12,10 +12,6 @@ let arrayOfEncounters = pokedex.map(({ encountered }) => encountered);
 
 let arrayOfNames = pokedex.map(({ name }) => name);
 
-console.log(pokedex);
-console.log(arrayOfNames);
-console.log(arrayOfEncounters);
-console.log(arrayOfCaptures);
 
 const myChart = new Chart(ctx, { // eslint-disable-line
     type: 'bar',

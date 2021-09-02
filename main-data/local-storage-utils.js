@@ -25,10 +25,10 @@ export function encounterPoke(id){
     const pokedex = getPokedex();
     const seenPokemon = findById(pokedex, id);
     if (seenPokemon){
-        pokedex.forEach(item => {
-            if (seenPokemon.id === item.id) item.encountered++;
-        });
-
+        // pokedex.forEach(item => {
+        //     if (seenPokemon.id === item.id) item.encountered++;
+        // });
+        seenPokemon.encountered++;
     } else { 
         pokedex.push({
             id,
@@ -43,9 +43,10 @@ export function encounterPoke(id){
 export function catchPoke(id){
     const pokedex = getPokedex();
     const caughtPokemon = findById(pokedex, id);
-    pokedex.forEach(item => {
-        if (caughtPokemon.id === item.id) item.captured++;
-    });
+    // pokedex.forEach(item => {
+    //     if (caughtPokemon.id === item.id) item.captured++;
+    // });
+    caughtPokemon.captured++;
     setPokedex(pokedex);
 
 }

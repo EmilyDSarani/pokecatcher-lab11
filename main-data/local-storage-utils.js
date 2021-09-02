@@ -1,4 +1,5 @@
 import { findById } from './utils.js';
+import pokenames from './data.js';
 
 //please note that local storage only knows strings. That is why we have to go through this procress to turn an array into a string the back. 
 const POKEDEX = 'POKEDEX';
@@ -34,6 +35,7 @@ export function encounterPoke(id){
             id,
             encountered: 1,
             captured: 0,
+            names: pokenames.pokemon
         });
     }     
     setPokedex(pokedex);

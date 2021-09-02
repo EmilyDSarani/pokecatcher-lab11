@@ -9,11 +9,14 @@ const arrayOfCaptures = pokedex.map(({ captured }) => captured);
 
 const arrayOfEncounters = pokedex.map(({ encountered }) => encountered);
 
+const arrayOfNames = pokedex.map(({ item }) => item);
+
 
 const myChart = new Chart(ctx, { // eslint-disable-line
-    type: 'line',
+    type: 'bar',
     data: {
-        labels: arrayOfEncounters,
+        labels: arrayOfNames,
+
         datasets: [
             {
                 labels: 'encountered',
@@ -29,6 +32,8 @@ const myChart = new Chart(ctx, { // eslint-disable-line
                 data: arrayOfCaptures,
                 backgroundColor: [
                     'blue',
+                    'yellow',
+                    'pink',
                     
                 ],
 
